@@ -21,15 +21,15 @@ const timeline: TimelineEntry[] = [
     period: "June 2022 — Present",
     description:
       "Production serverless infrastructure and automated data pipelines at enterprise scale.",
-    highlights: [],
-    // Uncomment when ready to show:
-    // "Built a serverless document storage API (Lambda, API Gateway, S3, DynamoDB) processing ~1.56M documents per workday (~36M/month) across 12 applications, replacing a legacy on-premises system with zero-downtime cutover",
-    // "Architected an automated data pipeline processing 38K–124K records daily with concurrent CloudWatch Logs queries, achieving ~4x throughput improvement through intelligent time-slicing",
-    // "Engineered idempotent document processing to handle duplicate S3 events, eliminating ~150 daily false alerts and ~20 hours/week of manual investigation",
-    // "Developed a self-healing error recovery pipeline auto-recovering ~60K documents daily, reducing manual reprocessing from ~10 hours/week to near-zero",
-    // "Built multi-region DR infrastructure (us-east-1/us-west-2) for a zero-downtime platform serving 18.5B documents (~6PB) using modular Terraform with DynamoDB global tables",
-    // "Co-led migration of 60+ production servers in 1 month (6x acceleration), owning end-to-end execution across multiple dependent teams",
-    // "Mentored 3 engineers on infrastructure operations and co-mentored 2 summer interns on AWS, Terraform, and deployment",
+    highlights: [
+      "Built a serverless document storage API (Lambda, API Gateway, S3, DynamoDB) processing ~1.56M documents per workday (~36M/month) across 12 applications, replacing a legacy on-premises system with zero-downtime cutover",
+      "Architected an automated data pipeline processing 38K–124K records daily with concurrent CloudWatch Logs queries, achieving ~4x throughput improvement through intelligent time-slicing",
+      "Engineered idempotent document processing to handle duplicate S3 events, eliminating ~150 daily false alerts and ~20 hours/week of manual investigation",
+      "Developed a self-healing error recovery pipeline auto-recovering ~60K documents daily, reducing manual reprocessing from ~10 hours/week to near-zero",
+      "Built multi-region DR infrastructure (us-east-1/us-west-2) for a zero-downtime platform serving 18.5B documents (~6PB) using modular Terraform with DynamoDB global tables",
+      "Co-led migration of 60+ production servers in 1 month (6x acceleration), owning end-to-end execution across multiple dependent teams",
+      "Mentored 3 engineers on infrastructure operations and co-mentored 2 summer interns on AWS, Terraform, and deployment",
+    ],
   },
   {
     type: "education",
