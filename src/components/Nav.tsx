@@ -36,14 +36,14 @@ export default function Nav() {
             alt="DF"
             width={32}
             height={32}
-            className="block dark:hidden rounded-lg shadow-vercel-border"
+            className="block dark:hidden"
           />
           <Image
             src="/favicon-dark/favicon-32x32.png"
             alt="DF"
             width={32}
             height={32}
-            className="hidden dark:block rounded-lg shadow-dark-border"
+            className="hidden dark:block"
           />
         </a>
 
