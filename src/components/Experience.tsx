@@ -51,12 +51,25 @@ const timeline: TimelineEntry[] = [
   },
   {
     type: "education",
-    title: "B.S. Computer Science & B.S. Statistics",
+    title: "B.S. in Computer Science and B.S. in Statistics",
     organization: "University of Wisconsin-Madison",
     location: "Madison, WI",
     period: "",
-    description: "Dual degree in Computer Science and Statistics.",
-    highlights: [],
+    description: "",
+    highlights: [
+      "Elementary Matrix and Linear Algebra",
+      "Multivariable Calculus",
+      "Applied Regression Analysis",
+      "Introduction to Probability and Mathematical Statistics",
+      "Deep Learning",
+      "Machine Learning",
+      "Introduction to Artificial Intelligence",
+      "Data Visualization",
+      "Discrete Mathematics",
+      "Introduction to Operating Systems",
+      "Introduction to Algorithm",
+      "Database Management Systems",
+    ],
   },
 ];
 

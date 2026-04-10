@@ -50,7 +50,7 @@ export default function About() {
             Data Engineer at State Farm building production serverless systems processing millions
             of documents daily. Currently pursuing a Master of Computer Science in Data Science at
             UIUC (4.00 GPA) with coursework spanning deep learning, cloud computing, and statistical
-            learning. B.S. in Computer Science and B.S. in Statistics from UW-Madison.
+            learning. B.S. in Computer Science and B.S. in Statistics from UW–Madison.
           </p>
         </FadeIn>
 
