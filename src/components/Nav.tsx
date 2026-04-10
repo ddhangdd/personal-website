@@ -30,7 +30,7 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="block w-10 h-10">
+        <a href="/" className="block w-10 h-10">
           <Image
             src="/favicon-light/android-chrome-192x192.png"
             alt="DF"
