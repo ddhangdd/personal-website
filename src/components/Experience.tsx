@@ -6,6 +6,7 @@ interface TimelineEntry {
   type: "work" | "education";
   title: string;
   organization: string;
+  location: string;
   period: string;
   description: string;
   highlights: string[];
@@ -14,29 +15,48 @@ interface TimelineEntry {
 const timeline: TimelineEntry[] = [
   {
     type: "work",
-    title: "Software Engineer",
+    title: "Data Engineer",
     organization: "State Farm",
-    period: "Present",
+    location: "Bloomington, IL",
+    period: "June 2022 — Present",
     description:
-      "Cloud infrastructure and developer tooling for enterprise systems. Pursuing lead software engineer role.",
+      "Production serverless infrastructure and automated data pipelines at enterprise scale.",
     highlights: [
-      "Cloud infrastructure with AWS Lambda, SQS, S3, DynamoDB, API Gateway",
-      "Developer tooling and migration projects using Ansible playbooks",
-      "Led CRMT server migration establishing automated deployment patterns",
+      "Built a serverless document storage API (Lambda, API Gateway, S3, DynamoDB) processing ~1.56M documents per workday (~36M/month) across 12 applications, replacing a legacy on-premises system with zero-downtime cutover",
+      "Architected an automated data pipeline processing 38K–124K records daily with concurrent CloudWatch Logs queries, achieving ~4x throughput improvement through intelligent time-slicing",
+      "Engineered idempotent document processing to handle duplicate S3 events, eliminating ~150 daily false alerts and ~20 hours/week of manual investigation",
+      "Developed a self-healing error recovery pipeline auto-recovering ~60K documents daily, reducing manual reprocessing from ~10 hours/week to near-zero",
+      "Built multi-region DR infrastructure (us-east-1/us-west-2) for a zero-downtime platform serving 18.5B documents (~6PB) using modular Terraform with DynamoDB global tables",
+      "Co-led migration of 60+ production servers in 1 month (6x acceleration), owning end-to-end execution across multiple dependent teams",
+      "Mentored 3 engineers on infrastructure operations and co-mentored 2 summer interns on AWS, Terraform, and deployment",
     ],
   },
   {
     type: "education",
-    title: "M.S. Computer Science",
+    title: "Master of Computer Science in Data Science",
     organization: "University of Illinois Urbana-Champaign",
-    period: "Graduating August 2026",
-    description:
-      "Advanced coursework in AI, deep learning, and statistical methods.",
+    location: "Urbana-Champaign, IL",
+    period: "Expected Aug 2026",
+    description: "GPA: 4.00",
     highlights: [
-      "Deep Learning for Healthcare (CS 598)",
-      "AI Agents (CS 498)",
-      "Statistics & Statistical Learning (CS 598 PSL)",
+      "Deep Learning for Healthcare",
+      "Cloud Computing Applications",
+      "Applied Machine Learning",
+      "Practical Statistical Learning",
+      "Methods of Applied Statistics",
+      "Database Systems",
+      "Scientific Visualization",
+      "Theory and Practice of Data Cleaning",
     ],
+  },
+  {
+    type: "education",
+    title: "B.S. Computer Science & B.S. Statistics",
+    organization: "University of Wisconsin-Madison",
+    location: "Madison, WI",
+    period: "",
+    description: "Dual degree in Computer Science and Statistics.",
+    highlights: [],
   },
 ];
 
@@ -85,25 +105,32 @@ export default function Experience() {
                         <p className="text-base font-medium text-vercel-gray-600">
                           {entry.organization}
                         </p>
+                        <p className="text-sm text-vercel-gray-400">
+                          {entry.location}
+                        </p>
                       </div>
-                      <span className="text-mono-label text-vercel-gray-400 tracking-[0.1em] whitespace-nowrap">
-                        {entry.period}
-                      </span>
+                      {entry.period && (
+                        <span className="text-mono-label text-vercel-gray-400 tracking-[0.1em] whitespace-nowrap">
+                          {entry.period}
+                        </span>
+                      )}
                     </div>
 
                     <p className="text-body-small mb-5">{entry.description}</p>
 
-                    <ul className="space-y-2">
-                      {entry.highlights.map((h) => (
-                        <li
-                          key={h}
-                          className="text-sm text-vercel-gray-500 flex items-start gap-2.5"
-                        >
-                          <span className="w-1 h-1 rounded-full bg-vercel-gray-400 mt-2 shrink-0" />
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
+                    {entry.highlights.length > 0 && (
+                      <ul className="space-y-2">
+                        {entry.highlights.map((h) => (
+                          <li
+                            key={h}
+                            className="text-sm text-vercel-gray-500 flex items-start gap-2.5"
+                          >
+                            <span className="w-1 h-1 rounded-full bg-vercel-gray-400 mt-2 shrink-0" />
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </FadeIn>

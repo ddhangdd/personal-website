@@ -20,12 +20,12 @@ const projects: Project[] = [
     tech: ["Databricks", "Neo4j", "MCP", "Python"],
   },
   {
-    title: "PyHealth GRASP Pipeline",
+    title: "Clinical Outcome Prediction with KEEP",
     description:
-      "Migrated clinical prediction pipeline from PyHealth 1.x to 2.0, implementing KEEP embeddings for heart failure prediction on EHR data.",
+      "Reproducing the KEEP embedding framework for in-hospital mortality prediction on MIMIC-IV — constructing a ~5,700-node medical knowledge graph from OMOP vocabularies and integrating as a pluggable embedding layer into PyHealth 2.0.",
     category: "Healthcare AI",
     categoryColor: "#de1d8d",
-    tech: ["PyHealth", "PyTorch", "KEEP", "Python"],
+    tech: ["PyTorch", "node2vec", "GloVe", "NetworkX", "DuckDB"],
   },
   {
     title: "AI Coding Workflow System",

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import FadeIn from "./FadeIn";
 
 export default function Hero() {
@@ -14,41 +15,68 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-[1200px] mx-auto px-6 md:px-8 text-center">
-        <FadeIn>
-          <p className="text-mono-label text-vercel-gray-500 mb-6 tracking-[0.12em]">
-            AI Engineer & Software Engineer
-          </p>
-        </FadeIn>
+      <div className="relative max-w-[1200px] mx-auto px-6 md:px-8">
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          {/* Photo */}
+          <FadeIn>
+            <div className="shrink-0">
+              <div
+                className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden"
+                style={{
+                  boxShadow:
+                    "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 4px 8px rgba(0,0,0,0.06), 0px 16px 24px -8px rgba(0,0,0,0.08)",
+                }}
+              >
+                <Image
+                  src="/profile.jpg"
+                  alt="Desmond Fung"
+                  width={256}
+                  height={256}
+                  priority
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </FadeIn>
 
-        <FadeIn delay={100}>
-          <h1 className="text-display text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] mb-6">
-            Desmond Fung
-          </h1>
-        </FadeIn>
+          {/* Text */}
+          <div className="text-center md:text-left">
+            <FadeIn delay={100}>
+              <p className="text-mono-label text-vercel-gray-500 mb-6 tracking-[0.12em]">
+                Data Engineer & MCS Student
+              </p>
+            </FadeIn>
 
-        <FadeIn delay={200}>
-          <p className="text-body-large max-w-[640px] mx-auto mb-10">
-            Building intelligent systems at the intersection of cloud infrastructure, AI engineering, and developer tooling.
-          </p>
-        </FadeIn>
+            <FadeIn delay={150}>
+              <h1 className="text-display text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] mb-6">
+                Desmond Fung
+              </h1>
+            </FadeIn>
 
-        <FadeIn delay={300}>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <a
-              href="#projects"
-              className="inline-flex items-center px-5 py-2.5 bg-vercel-black text-white text-sm font-medium rounded-[6px] transition-colors hover:bg-black"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center px-5 py-2.5 bg-white text-vercel-black text-sm font-medium rounded-[6px] shadow-vercel-border transition-shadow hover:shadow-vercel-card"
-            >
-              Get in Touch
-            </a>
+            <FadeIn delay={200}>
+              <p className="text-body-large max-w-[640px] mb-10">
+                Building production data infrastructure at State Farm while pursuing a Master of Computer Science at UIUC.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={300}>
+              <div className="flex items-center justify-center md:justify-start gap-4 flex-wrap">
+                <a
+                  href="#projects"
+                  className="inline-flex items-center px-5 py-2.5 bg-vercel-black text-white text-sm font-medium rounded-[6px] transition-colors hover:bg-black"
+                >
+                  View Projects
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center px-5 py-2.5 bg-white text-vercel-black text-sm font-medium rounded-[6px] shadow-vercel-border transition-shadow hover:shadow-vercel-card"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

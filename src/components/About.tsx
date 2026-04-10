@@ -5,23 +5,27 @@ import FadeIn from "./FadeIn";
 const skillCategories = [
   {
     label: "Languages",
-    skills: ["Python", "TypeScript", "JavaScript", "SQL"],
-  },
-  {
-    label: "Cloud & Infra",
-    skills: ["AWS Lambda", "SQS", "S3", "DynamoDB", "API Gateway", "Docker"],
+    skills: ["Python", "Java", "SQL", "JavaScript", "C", "R", "HTML/CSS"],
   },
   {
     label: "AI / ML",
-    skills: ["PyTorch", "LLMs", "RAG", "Claude Code", "MCP"],
+    skills: ["PyTorch", "TensorFlow", "Scikit-learn", "NumPy", "Pandas", "Matplotlib", "NetworkX"],
   },
   {
-    label: "Data",
-    skills: ["Neo4j", "Databricks", "Unity Catalog"],
+    label: "Cloud & DevOps",
+    skills: ["AWS", "Terraform", "GitLab CI/CD", "Docker", "Ansible", "boto3"],
   },
   {
-    label: "Tools",
-    skills: ["Git", "Ansible", "tmux", "fish"],
+    label: "AWS Services",
+    skills: ["EC2", "Lambda", "S3", "DynamoDB", "SQS", "SNS", "API Gateway", "Step Functions", "CloudWatch", "IAM"],
+  },
+  {
+    label: "Databases & Tools",
+    skills: ["MySQL", "DuckDB", "Git", "Splunk", "Dynatrace", "Tableau", "Linux/Unix"],
+  },
+  {
+    label: "Certifications",
+    skills: ["AWS Cloud Practitioner", "Terraform Associate"],
   },
 ];
 
@@ -43,10 +47,10 @@ export default function About() {
 
         <FadeIn delay={150}>
           <p className="text-body-large max-w-[720px] mb-16">
-            Software Engineer at State Farm specializing in cloud infrastructure and AI engineering.
-            Currently pursuing an M.S. in Computer Science at UIUC with coursework in deep learning,
-            AI agents, and statistical learning. I build systems that bridge enterprise infrastructure
-            with modern AI capabilities.
+            Data Engineer at State Farm building production serverless systems processing millions
+            of documents daily. Currently pursuing a Master of Computer Science in Data Science at
+            UIUC (4.00 GPA) with coursework spanning deep learning, cloud computing, and statistical
+            learning. B.S. in Computer Science and B.S. in Statistics from UW-Madison.
           </p>
         </FadeIn>
 
