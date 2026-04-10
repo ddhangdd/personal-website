@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -29,12 +30,21 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
-        <a
-          href="#"
-          className="text-base font-semibold text-vercel-black dark:text-white"
-          style={{ letterSpacing: "-0.04em" }}
-        >
-          DF
+        <a href="#" className="block w-8 h-8">
+          <Image
+            src="/favicon-light/favicon-32x32.png"
+            alt="DF"
+            width={32}
+            height={32}
+            className="block dark:hidden rounded"
+          />
+          <Image
+            src="/favicon-dark/favicon-32x32.png"
+            alt="DF"
+            width={32}
+            height={32}
+            className="hidden dark:block rounded"
+          />
         </a>
 
         {/* Desktop nav */}
