@@ -30,19 +30,19 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="block w-8 h-8">
+        <a href="#" className="block w-10 h-10">
           <Image
-            src="/favicon-light/favicon-32x32.png"
+            src="/favicon-light/android-chrome-192x192.png"
             alt="DF"
-            width={32}
-            height={32}
+            width={40}
+            height={40}
             className="block dark:hidden"
           />
           <Image
-            src="/favicon-dark/favicon-32x32.png"
+            src="/favicon-dark/android-chrome-192x192.png"
             alt="DF"
-            width={32}
-            height={32}
+            width={40}
+            height={40}
             className="hidden dark:block"
           />
         </a>
