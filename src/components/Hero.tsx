@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Subtle atmospheric gradient */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08]"
         style={{
           background:
             "radial-gradient(ellipse 80% 60% at 50% 40%, #0a72ef 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 30% 60%, #de1d8d 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 70% 30%, #ff5b4f 0%, transparent 50%)",
@@ -21,11 +21,7 @@ export default function Hero() {
           <FadeIn>
             <div className="shrink-0">
               <div
-                className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden"
-                style={{
-                  boxShadow:
-                    "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 4px 8px rgba(0,0,0,0.06), 0px 16px 24px -8px rgba(0,0,0,0.08)",
-                }}
+                className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-vercel-card dark:shadow-dark-card"
               >
                 <Image
                   src="/profile.jpg"
@@ -42,7 +38,7 @@ export default function Hero() {
           {/* Text */}
           <div className="text-center md:text-left">
             <FadeIn delay={100}>
-              <p className="text-mono-label text-vercel-gray-500 mb-6 tracking-[0.12em]">
+              <p className="text-mono-label text-vercel-gray-500 dark:text-vercel-gray-400 mb-6 tracking-[0.12em]">
                 Data Engineer & MCS Student
               </p>
             </FadeIn>
@@ -63,13 +59,13 @@ export default function Hero() {
               <div className="flex items-center justify-center md:justify-start gap-4 flex-wrap">
                 <a
                   href="#projects"
-                  className="inline-flex items-center px-5 py-2.5 bg-vercel-black text-white text-sm font-medium rounded-[6px] transition-colors hover:bg-black"
+                  className="inline-flex items-center px-5 py-2.5 bg-vercel-black dark:bg-white text-white dark:text-vercel-black text-sm font-medium rounded-[6px] transition-colors hover:bg-black dark:hover:bg-vercel-gray-100"
                 >
                   View Projects
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center px-5 py-2.5 bg-white text-vercel-black text-sm font-medium rounded-[6px] shadow-vercel-border transition-shadow hover:shadow-vercel-card"
+                  className="inline-flex items-center px-5 py-2.5 bg-white dark:bg-transparent text-vercel-black dark:text-white text-sm font-medium rounded-[6px] shadow-vercel-border dark:shadow-dark-border transition-shadow hover:shadow-vercel-card dark:hover:shadow-dark-card"
                 >
                   Get in Touch
                 </a>

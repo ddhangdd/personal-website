@@ -67,21 +67,26 @@ function CategoryBadge({ label, color }: { label: string; color: string }) {
     <span
       className="text-mono-label tracking-[0.1em] px-2.5 py-1 rounded-full text-[0.6875rem]"
       style={{
-        color: color,
-        backgroundColor: isAccent ? `${color}10` : "#f5f5f5",
+        color: isAccent ? color : undefined,
+        backgroundColor: isAccent ? `${color}10` : undefined,
       }}
     >
-      {label}
+      {!isAccent && (
+        <span className="text-vercel-gray-600 dark:text-vercel-gray-400 bg-vercel-gray-50 dark:bg-white/[0.06] px-2.5 py-1 rounded-full">
+          {label}
+        </span>
+      )}
+      {isAccent && label}
     </span>
   );
 }
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 bg-vercel-gray-50">
+    <section id="projects" className="py-24 md:py-32 bg-vercel-gray-50 dark:bg-[#0a0a0a]">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <FadeIn>
-          <p className="text-mono-label text-vercel-gray-500 mb-4 tracking-[0.12em]">
+          <p className="text-mono-label text-vercel-gray-500 dark:text-vercel-gray-400 mb-4 tracking-[0.12em]">
             Projects
           </p>
         </FadeIn>
@@ -95,11 +100,11 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, idx) => (
             <FadeIn key={project.title} delay={100 + idx * 80}>
-              <div className="group h-full bg-white rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col">
+              <div className="group h-full bg-white dark:bg-[#111111] rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col">
                 {/* Colored top edge */}
                 <div
                   className="h-[2px] rounded-t-vercel-lg"
-                  style={{ backgroundColor: project.categoryColor }}
+                  style={{ backgroundColor: project.categoryColor === "#171717" ? "rgba(255,255,255,0.1)" : project.categoryColor }}
                 />
 
                 <div className="p-6 flex flex-col flex-1">
@@ -110,7 +115,7 @@ export default function Projects() {
                     />
                   </div>
 
-                  <h3 className="text-card-title mb-3 group-hover:text-vercel-black transition-colors">
+                  <h3 className="text-card-title mb-3">
                     {project.title}
                   </h3>
 
@@ -122,7 +127,7 @@ export default function Projects() {
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="font-mono text-[0.6875rem] font-medium uppercase tracking-wider text-vercel-gray-400 px-2 py-0.5 rounded bg-vercel-gray-50"
+                        className="font-mono text-[0.6875rem] font-medium uppercase tracking-wider text-vercel-gray-400 px-2 py-0.5 rounded bg-vercel-gray-50 dark:bg-white/[0.06]"
                       >
                         {t}
                       </span>

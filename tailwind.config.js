@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -37,6 +38,9 @@ module.exports = {
         "vercel-card": "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 2px 2px rgba(0,0,0,0.04), 0px 8px 8px -8px rgba(0,0,0,0.04), inset 0px 0px 0px 1px #fafafa",
         "vercel-card-hover": "0px 0px 0px 1px rgba(0,0,0,0.12), 0px 4px 8px rgba(0,0,0,0.06), 0px 12px 12px -8px rgba(0,0,0,0.06), inset 0px 0px 0px 1px #fafafa",
         "vercel-ring": "0px 0px 0px 1px rgb(235,235,235)",
+        "dark-border": "0px 0px 0px 1px rgba(255,255,255,0.1)",
+        "dark-card": "0px 0px 0px 1px rgba(255,255,255,0.1), 0px 2px 2px rgba(0,0,0,0.2), 0px 8px 8px -8px rgba(0,0,0,0.3), inset 0px 0px 0px 1px rgba(255,255,255,0.04)",
+        "dark-card-hover": "0px 0px 0px 1px rgba(255,255,255,0.15), 0px 4px 8px rgba(0,0,0,0.3), 0px 12px 12px -8px rgba(0,0,0,0.3), inset 0px 0px 0px 1px rgba(255,255,255,0.06)",
       },
       letterSpacing: {
         "display": "-0.06em",

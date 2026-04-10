@@ -43,8 +43,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-screen bg-white text-vercel-black font-sans">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var d=document.documentElement;var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){d.classList.add("dark")}}catch(e){}})()`,
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-white dark:bg-[#0a0a0a] text-vercel-black dark:text-[#ededed] font-sans transition-colors duration-300">
         {children}
       </body>
     </html>

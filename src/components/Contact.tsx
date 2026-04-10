@@ -4,7 +4,7 @@ import FadeIn from "./FadeIn";
 
 export default function Contact() {
   return (
-    <footer id="contact" className="bg-vercel-black text-white py-24 md:py-32">
+    <footer id="contact" className="bg-vercel-black dark:bg-[#111111] text-white py-24 md:py-32">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <FadeIn>
           <p className="text-mono-label text-vercel-gray-400 mb-4 tracking-[0.12em]">

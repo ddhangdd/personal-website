@@ -34,7 +34,7 @@ export default function About() {
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <FadeIn>
-          <p className="text-mono-label text-vercel-gray-500 mb-4 tracking-[0.12em]">
+          <p className="text-mono-label text-vercel-gray-500 dark:text-vercel-gray-400 mb-4 tracking-[0.12em]">
             About
           </p>
         </FadeIn>
@@ -58,7 +58,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillCategories.map((category, idx) => (
             <FadeIn key={category.label} delay={100 + idx * 80}>
-              <div className="card-shadow rounded-vercel p-6 bg-white hover:card-shadow-hover transition-shadow duration-300">
+              <div className="card-shadow rounded-vercel p-6 bg-white dark:bg-[#111111] hover:card-shadow-hover transition-shadow duration-300">
                 <p className="text-mono-label text-vercel-gray-400 mb-4 tracking-[0.12em]">
                   {category.label}
                 </p>
@@ -66,7 +66,7 @@ export default function About() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center px-2.5 py-1 rounded-full bg-vercel-gray-50 text-vercel-gray-600 text-xs font-medium"
+                      className="inline-flex items-center px-2.5 py-1 rounded-full bg-vercel-gray-50 dark:bg-white/[0.06] text-vercel-gray-600 dark:text-vercel-gray-400 text-xs font-medium"
                     >
                       {skill}
                     </span>
