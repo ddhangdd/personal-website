@@ -37,7 +37,7 @@ export default function Nav() {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {links.map((link) => (
             <a
               key={link.href}
@@ -52,7 +52,7 @@ export default function Nav() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-vercel-gray-50 transition-colors"
+          className="lg:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-vercel-gray-50 transition-colors"
           aria-label="Toggle menu"
         >
           <svg
@@ -81,7 +81,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md shadow-vercel-border">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md shadow-vercel-border">
           <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-4">
             {links.map((link) => (
               <a
