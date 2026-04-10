@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import FadeIn from "./FadeIn";
 
 export default function Hero() {
@@ -27,12 +26,12 @@ export default function Hero() {
                     "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 4px 8px rgba(0,0,0,0.06), 0px 16px 24px -8px rgba(0,0,0,0.08)",
                 }}
               >
-                <Image
-                  src="/profile.jpg"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/profile.jpg`}
                   alt="Desmond Fung"
                   width={256}
                   height={256}
-                  priority
                   className="w-full h-full object-cover"
                 />
               </div>
