@@ -1,26 +1,124 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    font-family: var(--font-geist-sans), Arial, sans-serif;
+    font-feature-settings: "liga" 1;
+    color: #171717;
+    background: #ffffff;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  * {
+    font-feature-settings: "liga" 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .text-display {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.06em;
+    color: #171717;
+  }
+
+  .text-section-heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.06em;
+    color: #171717;
+  }
+
+  .text-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.33;
+    letter-spacing: -0.04em;
+    color: #171717;
+  }
+
+  .text-body-large {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #4d4d4d;
+  }
+
+  .text-body {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.56;
+    color: #4d4d4d;
+  }
+
+  .text-body-small {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4d4d4d;
+  }
+
+  .text-mono-label {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-feature-settings: "liga" 1, "tnum" 1;
+  }
+
+  .card-shadow {
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.04),
+      0px 8px 8px -8px rgba(0, 0, 0, 0.04),
+      inset 0px 0px 0px 1px #fafafa;
+  }
+
+  .card-shadow-hover {
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.12),
+      0px 4px 8px rgba(0, 0, 0, 0.06),
+      0px 12px 12px -8px rgba(0, 0, 0, 0.06),
+      inset 0px 0px 0px 1px #fafafa;
+  }
+
+  .shadow-border {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@layer utilities {
+  .fade-hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .fade-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .stagger-1 { transition-delay: 0ms; }
+  .stagger-2 { transition-delay: 100ms; }
+  .stagger-3 { transition-delay: 200ms; }
+  .stagger-4 { transition-delay: 300ms; }
+  .stagger-5 { transition-delay: 400ms; }
+  .stagger-6 { transition-delay: 500ms; }
+}
+
+::selection {
+  background: hsla(0, 0%, 90%, 1);
+  color: #171717;
 }
