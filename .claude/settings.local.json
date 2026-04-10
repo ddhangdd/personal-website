@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx getdesign@latest:*)",
+      "Bash(npx create-next-app@latest:*)"
+    ]
+  }
+}
