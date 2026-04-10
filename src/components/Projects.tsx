@@ -12,14 +12,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Enterprise Knowledge Graph",
-    description:
-      "Architecture integrating Databricks, Neo4j, and Unity Catalog with MCP integration patterns for semantic search across enterprise data.",
-    category: "AI Engineering",
-    categoryColor: "#0a72ef",
-    tech: ["Databricks", "Neo4j", "MCP", "Python"],
-  },
-  {
     title: "Clinical Outcome Prediction with KEEP",
     description:
       "Reproducing the KEEP embedding framework for in-hospital mortality prediction on MIMIC-IV — constructing a ~5,700-node medical knowledge graph from OMOP vocabularies and integrating as a pluggable embedding layer into PyHealth 2.0.",
@@ -28,38 +20,62 @@ const projects: Project[] = [
     tech: ["PyTorch", "node2vec", "GloVe", "NetworkX", "DuckDB"],
   },
   {
-    title: "AI Coding Workflow System",
-    description:
-      "Orchestration layer for Claude Code with custom agents, Eisenhower Matrix TODO tracking, and tmux-based terminal multiplexing across WSL2 and macOS.",
-    category: "Developer Tooling",
-    categoryColor: "#ff5b4f",
-    tech: ["Claude Code", "tmux", "fish", "TypeScript"],
-  },
-  {
-    title: "CRMT Server Migration",
-    description:
-      "Led migration of critical infrastructure using Ansible playbooks, establishing automated deployment patterns at enterprise scale.",
-    category: "Cloud Infrastructure",
+    title: "Work in Progress",
+    description: "Project details coming soon.",
+    category: "TBD",
     categoryColor: "#171717",
-    tech: ["AWS", "Ansible", "Lambda", "SQS"],
+    tech: [],
   },
   {
-    title: "Smart Bookmark Organizer",
-    description:
-      "AI-powered bookmark management with topic-based collections and intelligent categorization.",
-    category: "Full Stack",
+    title: "Work in Progress",
+    description: "Project details coming soon.",
+    category: "TBD",
     categoryColor: "#171717",
-    tech: ["React", "TypeScript", "AI/ML", "REST APIs"],
-  },
-  {
-    title: "MCP Server Architecture",
-    description:
-      "Model Context Protocol servers for AI agent integration with enterprise tools.",
-    category: "MCP Integration",
-    categoryColor: "#0a72ef",
-    tech: ["MCP", "TypeScript", "Node.js", "APIs"],
+    tech: [],
   },
 ];
+
+// Future projects — uncomment and replace placeholders above when ready
+// {
+//   title: "Enterprise Knowledge Graph",
+//   description:
+//     "Architecture integrating Databricks, Neo4j, and Unity Catalog with MCP integration patterns for semantic search across enterprise data.",
+//   category: "AI Engineering",
+//   categoryColor: "#0a72ef",
+//   tech: ["Databricks", "Neo4j", "MCP", "Python"],
+// },
+// {
+//   title: "AI Coding Workflow System",
+//   description:
+//     "Orchestration layer for Claude Code with custom agents, Eisenhower Matrix TODO tracking, and tmux-based terminal multiplexing across WSL2 and macOS.",
+//   category: "Developer Tooling",
+//   categoryColor: "#ff5b4f",
+//   tech: ["Claude Code", "tmux", "fish", "TypeScript"],
+// },
+// {
+//   title: "CRMT Server Migration",
+//   description:
+//     "Led migration of critical infrastructure using Ansible playbooks, establishing automated deployment patterns at enterprise scale.",
+//   category: "Cloud Infrastructure",
+//   categoryColor: "#171717",
+//   tech: ["AWS", "Ansible", "Lambda", "SQS"],
+// },
+// {
+//   title: "Smart Bookmark Organizer",
+//   description:
+//     "AI-powered bookmark management with topic-based collections and intelligent categorization.",
+//   category: "Full Stack",
+//   categoryColor: "#171717",
+//   tech: ["React", "TypeScript", "AI/ML", "REST APIs"],
+// },
+// {
+//   title: "MCP Server Architecture",
+//   description:
+//     "Model Context Protocol servers for AI agent integration with enterprise tools.",
+//   category: "MCP Integration",
+//   categoryColor: "#0a72ef",
+//   tech: ["MCP", "TypeScript", "Node.js", "APIs"],
+// },
 
 function CategoryBadge({ label, color }: { label: string; color: string }) {
   const isAccent = color !== "#171717";
