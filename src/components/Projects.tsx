@@ -8,6 +8,7 @@ interface Project {
   category: string;
   categoryColor: string;
   tech: string[];
+  href?: string;
 }
 
 const projects: Project[] = [
@@ -20,11 +21,13 @@ const projects: Project[] = [
     tech: ["PyTorch", "node2vec", "GloVe", "NetworkX", "DuckDB"],
   },
   {
-    title: "Work in Progress",
-    description: "Project details coming soon.",
-    category: "TBD",
-    categoryColor: "#171717",
-    tech: [],
+    title: "Take-Home Pay Calculator",
+    description:
+      "2026 US take-home pay calculator for IL / WA / CA with federal brackets, 401(k) / HSA, FICA, and payroll add-ons (WA PFML, CA SDI). Side-by-side scenario comparison, URL-shareable state, and 2025/2026 data verified against IRS sources.",
+    category: "Personal Finance",
+    categoryColor: "#1ed760",
+    tech: ["React", "Vite", "GitHub Pages"],
+    href: "https://ddhangdd.github.io/take-home-calculator/",
   },
   {
     title: "Work in Progress",
@@ -114,8 +117,8 @@ export default function Projects() {
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project, idx) => (
-            <FadeIn key={project.title} delay={100 + idx * 80}>
+          {projects.map((project, idx) => {
+            const cardBody = (
               <div className="group h-full bg-white dark:bg-[#111111] rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col">
                 {/* Colored top edge */}
                 <div
@@ -124,11 +127,22 @@ export default function Projects() {
                 />
 
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="mb-4">
+                  <div className="mb-4 flex items-center justify-between gap-2">
                     <CategoryBadge
                       label={project.category}
                       color={project.categoryColor}
                     />
+                    {project.href && (
+                      <span
+                        aria-hidden="true"
+                        className="text-vercel-gray-400 dark:text-vercel-gray-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M7 17L17 7" />
+                          <path d="M7 7h10v10" />
+                        </svg>
+                      </span>
+                    )}
                   </div>
 
                   <h3 className="text-card-title mb-3">
@@ -151,8 +165,27 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </FadeIn>
-          ))}
+            );
+
+            return (
+              <FadeIn key={project.title} delay={100 + idx * 80}>
+                {project.href ? (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full rounded-vercel-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                    style={{ outlineColor: project.categoryColor }}
+                    aria-label={`${project.title} — open live demo`}
+                  >
+                    {cardBody}
+                  </a>
+                ) : (
+                  cardBody
+                )}
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>
