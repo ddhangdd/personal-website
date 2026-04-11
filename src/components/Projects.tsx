@@ -23,7 +23,7 @@ const projects: Project[] = [
   {
     title: "Take-Home Pay Calculator",
     description:
-      "2026 US take-home pay calculator for IL / WA / CA with federal brackets, 401(k) / HSA, FICA, and payroll add-ons (WA PFML, CA SDI). Side-by-side scenario comparison, URL-shareable state, and post-OBBBA 2025/2026 data verified against IRS sources.",
+      "2026 US take-home pay calculator for IL / WA / CA with federal brackets, 401(k) / HSA, FICA, and payroll add-ons (WA PFML, CA SDI). Side-by-side scenario comparison, URL-shareable state, and 2025/2026 data verified against IRS sources.",
     category: "Personal Finance",
     categoryColor: "#1ed760",
     tech: ["React", "Vite", "GitHub Pages"],
