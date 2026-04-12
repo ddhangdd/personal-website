@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import FadeIn from "./FadeIn";
 
 interface Project {
@@ -9,6 +10,7 @@ interface Project {
   categoryColor: string;
   tech: string[];
   href?: string;
+  image?: string;
 }
 
 const projects: Project[] = [
@@ -28,6 +30,7 @@ const projects: Project[] = [
     categoryColor: "#1ed760",
     tech: ["React", "Vite", "GitHub Pages"],
     href: "https://ddhangdd.github.io/take-home-calculator/",
+    image: "/projects/take-home-calculator.png",
   },
   {
     title: "Work in Progress",
@@ -119,12 +122,27 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, idx) => {
             const cardBody = (
-              <div className="group h-full bg-white dark:bg-[#111111] rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col">
-                {/* Colored top edge */}
-                <div
-                  className="h-[2px] rounded-t-vercel-lg"
-                  style={{ backgroundColor: project.categoryColor === "#171717" ? "rgba(255,255,255,0.1)" : project.categoryColor }}
-                />
+              <div className="group h-full bg-white dark:bg-[#111111] rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col overflow-hidden">
+                {project.image ? (
+                  <div className="relative aspect-[16/10] bg-vercel-gray-50 dark:bg-white/[0.03] overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div
+                      className="absolute inset-x-0 bottom-0 h-[2px]"
+                      style={{ backgroundColor: project.categoryColor === "#171717" ? "rgba(255,255,255,0.1)" : project.categoryColor }}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="h-[2px]"
+                    style={{ backgroundColor: project.categoryColor === "#171717" ? "rgba(255,255,255,0.1)" : project.categoryColor }}
+                  />
+                )}
 
                 <div className="p-6 flex flex-col flex-1">
                   <div className="mb-4 flex items-center justify-between gap-2">
