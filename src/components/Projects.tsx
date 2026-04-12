@@ -11,6 +11,7 @@ interface Project {
   tech: string[];
   href?: string;
   image?: string;
+  imageFit?: "cover" | "contain";
 }
 
 const projects: Project[] = [
@@ -21,11 +22,13 @@ const projects: Project[] = [
     category: "Healthcare AI",
     categoryColor: "#de1d8d",
     tech: ["PyTorch", "node2vec", "GloVe", "NetworkX", "DuckDB"],
+    image: "/projects/pyhealth-logo.png",
+    imageFit: "contain",
   },
   {
     title: "Take-Home Pay Calculator",
     description:
-      "2026 US take-home pay calculator for IL / WA / CA with federal brackets, 401(k) / HSA, FICA, and payroll add-ons (WA PFML, CA SDI). Side-by-side scenario comparison, URL-shareable state, and 2025/2026 data verified against IRS sources.",
+      "I built this to get a better handle on my own finances and know what to actually expect per paycheck.\n\nSupports side-by-side scenario comparison, 401(k) and HSA contributions, Social Security and Medicare, and URL-shareable state.\n\n2025/2026 tax data verified against IRS sources.",
     category: "Personal Finance",
     categoryColor: "#1ed760",
     tech: ["React", "Vite", "GitHub Pages"],
@@ -119,19 +122,29 @@ export default function Projects() {
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
           {projects.map((project, idx) => {
             const cardBody = (
-              <div className="group h-full bg-white dark:bg-[#111111] rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col overflow-hidden">
+              <div className="group bg-white dark:bg-[#111111] rounded-vercel-lg card-shadow hover:card-shadow-hover transition-shadow duration-300 flex flex-col overflow-hidden">
                 {project.image ? (
-                  <div className="relative aspect-[16/10] bg-vercel-gray-50 dark:bg-white/[0.03] overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} screenshot`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
+                  <div className={`relative aspect-[16/10] overflow-hidden ${project.imageFit === "contain" ? "bg-white dark:bg-white/[0.04] flex items-center justify-center" : "bg-vercel-gray-50 dark:bg-white/[0.03]"}`}>
+                    {project.imageFit === "contain" ? (
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} logo`}
+                        width={185}
+                        height={185}
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    )}
                     <div
                       className="absolute inset-x-0 bottom-0 h-[2px]"
                       style={{ backgroundColor: project.categoryColor === "#171717" ? "rgba(255,255,255,0.1)" : project.categoryColor }}
@@ -167,11 +180,11 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p className="text-body-small flex-1 mb-6">
+                  <p className="text-body-small mb-6 whitespace-pre-line">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
                       <span
                         key={t}
@@ -192,7 +205,7 @@ export default function Projects() {
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block h-full rounded-vercel-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="block rounded-vercel-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                     style={{ outlineColor: project.categoryColor }}
                     aria-label={`${project.title} — open live demo`}
                   >
