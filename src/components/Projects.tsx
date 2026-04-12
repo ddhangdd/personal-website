@@ -32,7 +32,7 @@ const projects: Project[] = [
     category: "Personal Finance",
     categoryColor: "#1ed760",
     tech: ["React", "Vite", "GitHub Pages"],
-    href: "https://ddhangdd.github.io/take-home-calculator/",
+    href: "https://takehome.desmondfung.dev",
     image: "/projects/take-home-calculator.png",
   },
   {
