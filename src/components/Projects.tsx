@@ -28,7 +28,7 @@ const projects: Project[] = [
   {
     title: "Take-Home Pay Calculator",
     description:
-      "I built this to get a better handle on my own finances and know what to actually expect per paycheck.\n\nSupports side-by-side scenario comparison, 401(k) and HSA contributions, Social Security and Medicare, and URL-shareable state.\n\n2025/2026 tax data verified against IRS sources.",
+      "I built this to get a better handle on my own finances and know what to actually expect per paycheck\n\nThis app supports side-by-side scenario comparison, 401(k) and HSA contributions, Social Security and Medicare, and URL-shareable state\n\n2025/2026 tax data verified against IRS sources.",
     category: "Personal Finance",
     categoryColor: "#1ed760",
     tech: ["React", "Vite", "GitHub Pages"],
